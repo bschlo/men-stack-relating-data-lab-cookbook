@@ -36,6 +36,7 @@ app.use(
     saveUninitialized: true,
   })
 );
+// server.js
 
 app.use(passUserToView);
 app.use('/auth', authController);
@@ -57,8 +58,6 @@ app.get('/vip-lounge', (req, res) => {
     res.send('Sorry, no guests allowed.');
   }
 });
-
-app.use('/auth', authController);
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);

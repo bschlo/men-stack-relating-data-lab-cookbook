@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%= recipe.name %> Recipe</title>
 </head>
 <body>
 <%- include('../partials/_navbar.ejs') %> 
 <h1><%= recipe.name %></h1>
  <ul>
+    <li>Name: <%= recipe.name%></li>
     <li>Instructions: <%= recipe.instructions%></li>
-    <li>Ingredients: <%= recipe.instructions%></li>
+    <li> 
+        Ingredients: 
+        <% recipe.ingredients.forEach((ingredient) => { %>
+         <%= ingredient.name %>, 
+        <% }) %>
+</li>
     </ul>
 </body>
 </html>
